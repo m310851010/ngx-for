@@ -1,0 +1,24 @@
+{
+  "name": "@xmagic/ngx-for",
+  "version": "1.0.3",
+  "description": "和ngFor指令用法类似,同时支持多种数据结构,比如: Map,key/value,Iterable",
+  "author": "m310851010",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m310851010/ngx-for.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m310851010/ngx-for/issues"
+  },
+  "homepage": "https://github.com/m310851010/ngx-for",
+  "keywords": [
+    "angular",
+    "angular13",
+    "angular14",
+    "ngFor",
+    "ngxFor",
+    "ngx-for"
+  ],
+  "license": "MIT",
+  "peerDependencies": {}
+}

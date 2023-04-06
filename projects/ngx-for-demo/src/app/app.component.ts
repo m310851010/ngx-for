@@ -26,8 +26,8 @@ export class AppComponent {
     ['wangwu', '王五']
   ]);
   ngxForMapText = JSON.stringify(
-    Array.from(this.myMap.entries()).reduce((prev, curr) => {
-      prev[curr[0]] = curr[1];
+    Array.from(this.myMap.entries()).reduce((prev, [key, value]) => {
+      prev[key] = value;
       return prev;
     }, {}),
     null,

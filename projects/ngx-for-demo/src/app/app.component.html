@@ -17,11 +17,18 @@
 </div>
 
 <div class="content" role="main">
-  <h2>v-for</h2>
+  <h2>ngx-for & Iterable</h2>
+
+  <div class="markdown-body">
+    <pre><span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">*ngx-for</span>="<span class="pl-s">let value of myList; index as index; key as key; count as c</span>"<span class="pl-kos">&gt;</span>
+    {{"{{ index }}"}}/{{ "{{ c }}" }}. {{ "{{ key }}" }}: {{ "{{ value }}" }}
+<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span></pre>
+  </div>
+
   <textarea
     class="input"
     cols="30"
-    rows="5"
+    rows="2"
     [(ngModel)]="ngxForText"
     (ngModelChange)="onNgxForTextChange($event)"
   ></textarea>
@@ -34,7 +41,13 @@
     </ul>
   </div>
 
-  <h2>v-for 和 对象</h2>
+  <h2>ngx-for & Object</h2>
+  <div class="markdown-body">
+    <pre><span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">*ngx-for</span>="<span class="pl-s">let value of myObject; index as index; key as key; count as c</span>"<span class="pl-kos">&gt;</span>
+    {{"{{ index }}"}}/{{ "{{ c }}" }}. {{ "{{ key }}" }}: {{ "{{ value }}" }}
+<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span></pre>
+  </div>
+
   <textarea
     class="input"
     cols="30"

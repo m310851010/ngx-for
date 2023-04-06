@@ -128,8 +128,8 @@ Angular 在编译模板时会自动扩展简写语法。每个嵌入式视图的
 ### 局部变量
 `NgxForOf` 可以为所提供的导出值指定一个局部变量别名。比如：
 ```html
-<li *ngxFor="let user of users; index as i; first as isFirst; count as c">
-   {{i}}/{{c}}. {{user}} <span *ngIf="isFirst">default</span>
+<li *ngx-for="let value of myObject; index as index; key as key; count as c">
+{{ index }}/{{ c }}. {{ key }}: {{ value }}
 </li>
 ```
 

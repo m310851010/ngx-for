@@ -175,3 +175,32 @@ svg#clouds {
   transition: background-color 0.5s ease;
   font-size: 16px;
 }
+
+//  markdown
+.markdown-body pre {
+  padding: 10px;
+  overflow: auto;
+  line-height: 1.45;
+  color: #1f2328;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.pl-ent {
+  color: #116329;
+}
+
+.pl-s,
+.pl-pds,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sre,
+.pl-sr .pl-sra {
+  color: #0a3069;
+}
+
+.pl-c1,
+.pl-s .pl-v {
+  color: #0550ae;
+}

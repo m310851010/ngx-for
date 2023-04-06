@@ -33,9 +33,9 @@ import `NgxForModule`。
 import { NgxForModule } from '@xmagic/ngx-for';
 
 @NgModule({
-    imports: [ BrowserModule, NgxForModule ],
-    declarations: [AppComponent],
-    bootstrap: [AppComponent]
+  imports: [ BrowserModule, NgxForModule ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
@@ -69,13 +69,13 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-    myObject = {
-        name1: '张三',
-        name2: '李四',
-        name3: '王五'
-    };
+  myObject = {
+    name1: '张三',
+    name2: '李四',
+    name3: '王五'
+  };
 
-    myList = ['张三', '李四', '王五']
+  myList = ['张三', '李四', '王五']
 }
 ```
 
@@ -128,8 +128,8 @@ Angular 在编译模板时会自动扩展简写语法。每个嵌入式视图的
 ### 局部变量
 `NgxForOf` 可以为所提供的导出值指定一个局部变量别名。比如：
 ```html
-<li *ngxFor="let user of users; index as i; first as isFirst; count as c">
-    {{i}}/{{c}}. {{user}} <span *ngIf="isFirst">default</span>
+<li *ngx-for="let value of myObject; index as index; key as key; count as c">
+{{ index }}/{{ c }}. {{ key }}: {{ value }}
 </li>
 ```
 

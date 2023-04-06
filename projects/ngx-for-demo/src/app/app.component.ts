@@ -8,22 +8,34 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   link = 'https://github.com/m310851010/ngx-for';
   title = 'ngx-for-demo';
-  myList: string[] = [];
-  ngxForText = `["张三", "李四", "王五"]`;
+  myList: string[] = ['张三', '李四', '王五'];
+  ngxForText = JSON.stringify(this.myList);
   ngxForMessage = '';
 
-  myObject: string[] = [];
-  ngxForObjectText = `{
-   "zhangsan": "张三",
-   "lisi": "李四",
-   "wangwu": "王五"
-}`;
+  myObject: Record<string, string> = {
+    zhangsan: '张三',
+    lisi: '李四',
+    wangwu: '王五'
+  };
+  ngxForObjectText = JSON.stringify(this.myObject, null, 1);
   ngxForObjectMessage = '';
 
-  constructor() {
-    this.onNgxForTextChange(this.ngxForText);
-    this.onNgxForObjectTextChange(this.ngxForObjectText);
-  }
+  myMap = new Map<string, string>([
+    ['zhangsan', '张三'],
+    ['lisi', '李四'],
+    ['wangwu', '王五']
+  ]);
+  ngxForMapText = JSON.stringify(
+    Array.from(this.myMap.entries()).reduce((prev, curr) => {
+      prev[curr[0]] = curr[1];
+      return prev;
+    }, {}),
+    null,
+    1
+  );
+  ngxForMapMessage = '';
+
+  constructor() {}
 
   onNgxForTextChange(text: string) {
     this.ngxForMessage = '';
@@ -40,6 +52,19 @@ export class AppComponent {
       this.myObject = JSON.parse(text);
     } catch (e) {
       this.ngxForObjectMessage = e.message;
+    }
+  }
+
+  onNgxForMapTextChange(text: string) {
+    this.ngxForMapMessage = '';
+    try {
+      this.myMap.clear();
+      const kv = JSON.parse(text);
+      for (const key in kv) {
+        this.myMap.set(key, kv[key]);
+      }
+    } catch (e) {
+      this.ngxForMapMessage = e.message;
     }
   }
 }

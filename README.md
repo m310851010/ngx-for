@@ -59,6 +59,15 @@ export class AppModule { }
     <li *ngxFor="let value of myList; index as index; key as key">
         {{ index }}. {{ key }}: {{ value }}
     </li>
+
+    <li *ngxFor="let value of myMap; index as index; key as key">
+        {{ index }}. {{ key }}: {{ value }}
+    </li>
+
+    <li *ngxFor="let value of myMap; index as index; key as key">
+        {{ index }}. {{ key }}: {{ value }}
+    </li>
+    
 </ul>
 ```
 
@@ -75,7 +84,13 @@ export class AppComponent {
     name3: '王五'
   };
 
-  myList = ['张三', '李四', '王五']
+  myList = ['张三', '李四', '王五'];
+  
+  myMap = new Map({
+      key1: '张三',
+      key2: '李四',
+      key3: '王五'
+  });
 }
 ```
 
@@ -116,6 +131,10 @@ export class AppComponent {
 - `*ngx-for`
 
 例如
+
+```html
+<li *ngxFor="let item of items; index as i; trackBy: trackByFn">...</li>
+```
 
 ```html
 <li *ngx-for="let item of items; index as i; trackBy: trackByFn">...</li>

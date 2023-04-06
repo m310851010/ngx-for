@@ -33,9 +33,9 @@ import `NgxForModule`。
 import { NgxForModule } from '@xmagic/ngx-for';
 
 @NgModule({
-  imports: [ BrowserModule, NgxForModule ],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent]
+    imports: [ BrowserModule, NgxForModule ],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
@@ -59,6 +59,15 @@ export class AppModule { }
     <li *ngxFor="let value of myList; index as index; key as key">
         {{ index }}. {{ key }}: {{ value }}
     </li>
+
+    <li *ngxFor="let value of myMap; index as index; key as key">
+        {{ index }}. {{ key }}: {{ value }}
+    </li>
+
+    <li *ngxFor="let value of myMap; index as index; key as key">
+        {{ index }}. {{ key }}: {{ value }}
+    </li>
+
 </ul>
 ```
 
@@ -75,7 +84,13 @@ export class AppComponent {
     name3: '王五'
   };
 
-  myList = ['张三', '李四', '王五']
+  myList = ['张三', '李四', '王五'];
+  
+  myMap = new Map({
+      key1: '张三',
+      key2: '李四',
+      key3: '王五'
+  });
 }
 ```
 
@@ -118,6 +133,10 @@ export class AppComponent {
 例如
 
 ```html
+<li *ngxFor="let item of items; index as i; trackBy: trackByFn">...</li>
+```
+
+```html
 <li *ngx-for="let item of items; index as i; trackBy: trackByFn">...</li>
 ```
 
@@ -129,7 +148,7 @@ Angular 在编译模板时会自动扩展简写语法。每个嵌入式视图的
 `NgxForOf` 可以为所提供的导出值指定一个局部变量别名。比如：
 ```html
 <li *ngx-for="let value of myObject; index as index; key as key; count as c">
-{{ index }}/{{ c }}. {{ key }}: {{ value }}
+    {{ index }}/{{ c }}. {{ key }}: {{ value }}
 </li>
 ```
 

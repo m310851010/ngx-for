@@ -269,7 +269,7 @@ class KvDiffer<T> implements Differ<T> {
           applyViewChange(view as EmbeddedViewRef<NgxForContext<T, NgxKv<T>>>, item.currentValue);
         });
 
-        const keys = Object.keys(value);
+        const keys = value instanceof Map ? Array.from(value.keys()) : Object.keys(value as {});
         changes.forEachAddedItem(item => {
           viewContainer.createEmbeddedView(
             this._template,

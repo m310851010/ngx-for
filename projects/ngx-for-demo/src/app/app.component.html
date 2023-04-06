@@ -17,6 +17,8 @@
 </div>
 
 <div class="content" role="main">
+  <!--demo-->
+
   <h2>ngx-for & Iterable</h2>
 
   <div class="markdown-body">
@@ -63,6 +65,31 @@
       </li>
     </ul>
   </div>
+
+  <h2>ngx-for & Map</h2>
+  <div class="markdown-body">
+    <pre><span class="pl-kos">&lt;</span><span class="pl-ent">li</span> <span class="pl-c1">*ngxFor</span>="<span class="pl-s">let value of myMap; index as index; key as key; count as c</span>"<span class="pl-kos">&gt;</span>
+    {{"{{ index }}"}}/{{ "{{ c }}" }}. {{ "{{ key }}" }}: {{ "{{ value }}" }}
+<span class="pl-kos">&lt;/</span><span class="pl-ent">li</span><span class="pl-kos">&gt;</span></pre>
+  </div>
+
+  <textarea
+    class="input"
+    cols="30"
+    rows="8"
+    [(ngModel)]="ngxForMapText"
+    (ngModelChange)="onNgxForMapTextChange($event)"
+  ></textarea>
+  <div class="error-message">{{ ngxForMapMessage }}</div>
+  <div class="demo-code">
+    <ul>
+      <li *ngx-for="let value of myMap; index as index; key as key; count as c">
+        {{ index }}/{{ c }}. {{ key }}: {{ value }}
+      </li>
+    </ul>
+  </div>
+
+  <!--/demo-->
   <!-- Footer -->
   <footer>
     <div>

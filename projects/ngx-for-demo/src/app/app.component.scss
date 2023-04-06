@@ -49,7 +49,7 @@ p {
 }
 
 .content {
-  margin: 82px auto 32px;
+  margin: 82px auto 62px;
   padding: 0 16px;
   max-width: 960px;
 }
@@ -69,11 +69,13 @@ svg.material-icons:not(:last-child) {
 
 footer {
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
+  padding: 10px 0;
   right: 0;
   display: flex;
   align-items: center;
+  background-color: #eeeeee;
 }
 
 footer > div {
@@ -84,7 +86,6 @@ footer > div {
 footer > div > div {
   display: flex;
   align-items: center;
-  line-height: 20px;
 }
 
 footer a {
@@ -150,7 +151,6 @@ svg#clouds {
   border-radius: 2px;
   transition: all 0.3s;
   outline: none;
-  margin-bottom: 20px;
   &:focus {
     border: 1px solid #40a9ff;
     box-shadow: 0 0 0 2px #1890ff33;
@@ -174,6 +174,7 @@ svg#clouds {
   margin-bottom: 1.2em;
   transition: background-color 0.5s ease;
   font-size: 16px;
+  background-color: #fff;
 }
 
 //  markdown
